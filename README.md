@@ -1,18 +1,29 @@
-# cobertura-parse
+# cobertura-json
 
-Parse cobertura results file and return JSON
+Parse [cobertura](http://cobertura.github.io/cobertura/) report files, and return a JSON representation in a [lcov-parse](https://github.com/davglass/lcov-parse) compatible manner.
 
-The output is based on, and intended to be compatible with, https://github.com/davglass/lcov-parse
+## Usage
 
-## Use
+```javascript
+var cobertura = require( "cobertura-json" );
 
-```js
-var cob = require( "cobertura-parse" );
+// Parse by file path
+cobertura.parseFile("filepath.xml")
+    .then(function (result) {
+        console.log(JSON.stringify(result));
+    }).catch(function (err) {
+        console.error(err);
+    });
 
-// parse by file path
-cob.parseFile( "filepath.xml", function( err, result ) { ... } );
-
-// or parse file contents
-cob.parseContent( "<?xml version="1.0" ?><coverage>...</coverage>",
-    function( err, result ) { ... } );
+// Parse by file contents
+cobertura.parseContent("<?xml version=\"1.0\" ?><coverage>...</coverage>")
+    .then(function (result) {
+        console.log(JSON.stringify(result));
+    }).catch(function (err) {
+        console.error(err);
+    });
 ```
+
+## Thanks
+
+This repo was initially forked from [vokal/cobertura-parse](https://github.com/vokal/cobertura-parse). Thanks a lot!
