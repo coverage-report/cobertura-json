@@ -2,10 +2,16 @@
 
 Parse [cobertura](http://cobertura.github.io/cobertura/) report files, and return a JSON representation in a [lcov-parse](https://github.com/davglass/lcov-parse) compatible manner.
 
+## Installation
+
+```
+npm install @cvrg-report/cobertura-json
+```
+
 ## Usage
 
 ```javascript
-var cobertura = require( "cobertura-json" );
+var cobertura = require( "@cvrg-report/cobertura-json" );
 
 // Parse by file path
 cobertura.parseFile("filepath.xml")
