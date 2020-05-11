@@ -5,7 +5,7 @@ Parse [cobertura](http://cobertura.github.io/cobertura/) report files, and retur
 ## Installation
 
 ```
-npm install @cvrg-report/cobertura-json
+npm install @cvrg-report/cobertura-json --save
 ```
 
 ## Usage
